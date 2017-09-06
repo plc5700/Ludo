@@ -36,7 +36,7 @@ namespace Ludospil
 
         }
         public GameColor GetColor
-        {
+        {// aeeyyyy
             get
             {
                 return this.color;
