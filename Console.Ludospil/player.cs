@@ -44,7 +44,7 @@ namespace Ludospil
 
         }
         public Token[] GetToken
-            //her get for git
+            
         {
             get
             {
