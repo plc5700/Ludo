@@ -10,7 +10,7 @@ namespace Ludospil
     {
         public Board()
         {
-
+        //dum
         }
     }
 }
