@@ -5,3 +5,10 @@ C:\Users\Jonas\Documents\Visual Studio 2017\Projects\ITD.OOP.Console.Ludospil\Co
 C:\Users\Jonas\Documents\Visual Studio 2017\Projects\ITD.OOP.Console.Ludospil\Console.Ludospil\obj\Debug\Ludospil.csproj.CoreCompileInputs.cache
 C:\Users\Jonas\Documents\Visual Studio 2017\Projects\ITD.OOP.Console.Ludospil\Console.Ludospil\obj\Debug\Console.Ludospil.exe
 C:\Users\Jonas\Documents\Visual Studio 2017\Projects\ITD.OOP.Console.Ludospil\Console.Ludospil\obj\Debug\Console.Ludospil.pdb
+C:\Users\SDE-04026\Source\Repos\Ludo\Console.Ludospil\obj\Debug\Ludospil.csprojResolveAssemblyReference.cache
+C:\Users\SDE-04026\Source\Repos\Ludo\Console.Ludospil\obj\Debug\Ludospil.csproj.CoreCompileInputs.cache
+C:\Users\SDE-04026\Source\Repos\Ludo\Console.Ludospil\obj\Debug\Console.Ludospil.exe
+C:\Users\SDE-04026\Source\Repos\Ludo\Console.Ludospil\obj\Debug\Console.Ludospil.pdb
+C:\Users\SDE-04026\Source\Repos\Ludo\Console.Ludospil\bin\Debug\Console.Ludospil.exe.config
+C:\Users\SDE-04026\Source\Repos\Ludo\Console.Ludospil\bin\Debug\Console.Ludospil.exe
+C:\Users\SDE-04026\Source\Repos\Ludo\Console.Ludospil\bin\Debug\Console.Ludospil.pdb

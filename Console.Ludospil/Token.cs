@@ -6,19 +6,30 @@ using System.Threading.Tasks;
 
 namespace Ludospil
 {
+    public enum TokenState { Home, InPlay, Safe };
     public class Token
     {
-        int[] yellowTokens = new int[4], grenTokens = new int[4], bluTokens = new int[4], redTokens = new int[4];
+        private int tokenId;
         private GameColor color;
+        private TokenState state;
 
-        public Token(GameColor color)
+        public Token(int id, GameColor clr)
         {
-            this.color = color;
+            this.tokenId = id;
+            this.color = clr;
+            this.state = TokenState.Home;
         }
+		public int GetTokenId()
+		{
+            return this.tokenId;
+		}
         public GameColor GetColor()
         {
             return this.color;
         }
-
+        public TokenState GetState()
+		{
+            return this.state;
+		}
     }
 }

@@ -9,47 +9,39 @@ namespace Ludospil
     public class Player
     {
 
-        private Token[] tokens = new Token[4];
-        private GameColor color;
+        private readonly int playerId;
         private readonly string name;
-        public Player(string PlayerName, GameColor clr )
-        {
-            this.name = PlayerName;
-            this.color = clr;
-            CreateTokens(clr);
-        }
-        private void CreateTokens(GameColor clr)
-        {
-            for(int i = 0; i<= 3; i++)
-            {
-                this.tokens[i] = new Token(clr);
+        private readonly Token[] tokens;
 
-            }
+        public Player(int id, string playerName, Token[] tokens)
+        {
+            this.playerId = id;
+            this.name = playerName;
+            this.tokens = tokens;
+            this.Color = this.tokens[0].GetColor();
         }
-
         public string GetName
-
         {
-            get{
+            get
+            {
                 return this.name;
             }
-
         }
-        public GameColor GetColor
-        {// aeeyyyy
-            get
-            {
-                return this.color;
-            }
-
-        }
-        public Token[] GetToken
-            
+        public GameColor Color
         {
-            get
-            {
-                return this.tokens;
-            }
+            get;
+        }
+        public int GetPlayerId()
+        {
+            return this.playerId;
+        }
+        public string GetDescription()
+        {
+            return "#" + this.GetPlayerId() + " " + this.Color + " spiller: " + this.GetName;
+        }
+        public Token[] GetTokens()
+        {
+            return this.tokens;
         }
 
     }

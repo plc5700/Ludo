@@ -13,15 +13,19 @@ namespace Ludospil
 
         public Dice()
         {
-            this.ThrowDice();
-
+            this.diceValue = this.rnd.Next(1, 7);
         }
 
         public int ThrowDice()
         {
             
             this.diceValue = rnd.Next(1, 7);
+            for (int i = 3; i > 0; i--)
+			{
+				Console.Write(" . ");
+				System.Threading.Thread.Sleep(500);
 
+			}
             return this.diceValue;
         }
 
@@ -30,7 +34,7 @@ namespace Ludospil
             return this.diceValue;
 
         }
-
+ 
 
     }
 }

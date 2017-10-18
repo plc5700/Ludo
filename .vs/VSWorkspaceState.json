@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Console.Ludospil"
   ],
-  "SelectedNode": "\\ITD.OOP.Console.Ludospil.sln",
+  "SelectedNode": "\\Console.Ludospil\\Game.cs",
   "PreviewInSolutionExplorer": false
 }
