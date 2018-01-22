@@ -13,8 +13,6 @@ namespace Ludospil
     public class Game
     {
         private GameState state;
-        private int delay = 500;
-
         private int numberOfPlayers;
         private Player[] players;
         private int playerTurn = 1;
@@ -22,7 +20,7 @@ namespace Ludospil
 
         public Game()
         {
-            Console.WriteLine("Velkommen til Ludo");
+            Console.WriteLine("hej og Velkommen til mit Ludo spil");
             SetNumberOfPlayers();
             CreatePlayers();
             ShowPlayers();
@@ -81,16 +79,16 @@ namespace Ludospil
                 switch(colorIndex)
                 {
                     case 0:
-                        tokens[i] =new Token((i+1), GameColor.Blu);
-                        break;
-                    case 1:
-                        tokens[i] =new Token((i+1), GameColor.Green);
-                        break;
-                    case 2:
                         tokens[i] =new Token((i+1), GameColor.Red);
                         break;
-                    case 3:
+                    case 1:
+                        tokens[i] =new Token((i+1), GameColor.Blu);
+                        break;
+                    case 2:
                         tokens[i] =new Token((i+1), GameColor.Yellow);
+                        break;
+                    case 3:
+                        tokens[i] =new Token((i+1), GameColor.Green);
                         break;
                 }
 
@@ -112,6 +110,11 @@ namespace Ludospil
         {
             while(this. state == GameState.Inplay)
             {
+                if (dice.GetValue() == 6)
+                {
+                    playerTurn--;
+                   // Console.WriteLine("der er" + myTurn.GetDescription() +"tur igen" );
+                }
                 Player myTurn =  players[(playerTurn-1)];
                 Console.WriteLine(myTurn.GetName + "'s tur");
                 Console.WriteLine("det er " + myTurn.GetDescription() + " tur");
@@ -166,9 +169,12 @@ namespace Ludospil
             Console.WriteLine("Du har "+choice.ToString()+" muligheder i denne tur.");
 
             // No options, change turn
-            if(choice == 0){
+            if(choice == 0)
+            {
                 this.ChangeTurn();
-            } else {
+            }
+            else 
+            {
                 Console.WriteLine("Vælg den #brik du vil spille?");
 
             }
@@ -177,21 +183,22 @@ namespace Ludospil
         private void ChangeTurn()
 		{
             Console.WriteLine("");
-            if (playerTurn == numberOfPlayers){
+            if (playerTurn == numberOfPlayers)
+            {
                 playerTurn = 1;
-            } else {
+            }
+            
+            else 
+            {
                 playerTurn++;
             }
 
-            Console.Write("Skifter spiller om: ");
-			for (int i = 3; i > 0; i--)
-			{
-                Console.Write(" "+i.ToString()+" ");
-			}
+            Console.Write("det er nu ");
+			
 
             pause(1000);
             TakeTurns();
-	}
+	    }
     }
 
 }

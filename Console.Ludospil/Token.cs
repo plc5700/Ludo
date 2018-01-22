@@ -10,8 +10,11 @@ namespace Ludospil
     public class Token
     {
         private int tokenId;
+        private int tokenLocation;
+        private int tokenStartLocation;
         private GameColor color;
         private TokenState state;
+
 
         public Token(int id, GameColor clr)
         {
