@@ -82,16 +82,16 @@ namespace Ludospil
                 switch(colorIndex)
                 {
                     case 0:
-                        tokens[i] =new Token((i+1), GameColor.Red);
+                        tokens[i] =new Token((i+1), GameColor.Red, 0);
                         break;
                     case 1:
-                        tokens[i] =new Token((i+1), GameColor.Blu);
+                        tokens[i] =new Token((i+1), GameColor.Blu, 0);
                         break;
                     case 2:
-                        tokens[i] =new Token((i+1), GameColor.Yellow);
+                        tokens[i] =new Token((i+1), GameColor.Yellow, 0);
                         break;
                     case 3:
-                        tokens[i] =new Token((i+1), GameColor.Green);
+                        tokens[i] =new Token((i+1), GameColor.Green, 0);
                         break;
                 }
 

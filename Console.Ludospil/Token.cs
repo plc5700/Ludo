@@ -16,12 +16,12 @@ namespace Ludospil
         private TokenState state;
 
 
-        public Token(int id, GameColor clr)
+        public Token(int id, GameColor clr, int tsl)
         {
             this.tokenId = id;
             this.color = clr;
             this.state = TokenState.Home;
-            
+            this.tokenStartLocation = tsl;
 
         }
         public int GetTokenId()
@@ -36,13 +36,10 @@ namespace Ludospil
         {
             return this.state;
         }
-        public int GetLocation()
+        public int GetLocation
         {
-            
-           
-                get { return this.tokenLocation; }
-            
-            this.tokenLocation = value;
+            get { return this.tokenLocation; }
+            set { this.tokenLocation = value; }
         }
 
 
