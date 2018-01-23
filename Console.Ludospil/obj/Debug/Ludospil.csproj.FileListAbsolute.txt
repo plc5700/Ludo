@@ -12,3 +12,10 @@ C:\Users\SDE-04026\Source\Repos\Ludo\Console.Ludospil\obj\Debug\Console.Ludospil
 C:\Users\SDE-04026\Source\Repos\Ludo\Console.Ludospil\bin\Debug\Console.Ludospil.exe.config
 C:\Users\SDE-04026\Source\Repos\Ludo\Console.Ludospil\bin\Debug\Console.Ludospil.exe
 C:\Users\SDE-04026\Source\Repos\Ludo\Console.Ludospil\bin\Debug\Console.Ludospil.pdb
+C:\Users\SDE-04026\Desktop\Ludo\Console.Ludospil\bin\Debug\Console.Ludospil.exe.config
+C:\Users\SDE-04026\Desktop\Ludo\Console.Ludospil\bin\Debug\Console.Ludospil.exe
+C:\Users\SDE-04026\Desktop\Ludo\Console.Ludospil\bin\Debug\Console.Ludospil.pdb
+C:\Users\SDE-04026\Desktop\Ludo\Console.Ludospil\obj\Debug\Ludospil.csprojResolveAssemblyReference.cache
+C:\Users\SDE-04026\Desktop\Ludo\Console.Ludospil\obj\Debug\Ludospil.csproj.CoreCompileInputs.cache
+C:\Users\SDE-04026\Desktop\Ludo\Console.Ludospil\obj\Debug\Console.Ludospil.exe
+C:\Users\SDE-04026\Desktop\Ludo\Console.Ludospil\obj\Debug\Console.Ludospil.pdb

@@ -21,18 +21,35 @@ namespace Ludospil
             this.tokenId = id;
             this.color = clr;
             this.state = TokenState.Home;
+            
+
         }
-		public int GetTokenId()
-		{
+        public int GetTokenId()
+        {
             return this.tokenId;
-		}
+        }
         public GameColor GetColor()
         {
             return this.color;
         }
         public TokenState GetState()
-		{
+        {
             return this.state;
-		}
+        }
+        public int GetLocation()
+        {
+            
+           
+                get { return this.tokenLocation; }
+            
+            this.tokenLocation = value;
+        }
+
+
+
+
+
+
+
     }
 }

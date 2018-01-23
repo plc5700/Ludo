@@ -25,13 +25,16 @@ namespace Ludospil
             CreatePlayers();
             ShowPlayers();
             state = GameState.Inplay;
+            Console.WriteLine("klar til at spille (tryk vilkensomhelst knap)");
+            Console.ReadKey();
+            Clear();
             TakeTurns();
         }
 
-        private void clear()
+        private void Clear()
         {
             Console.Clear();
-            Console.WriteLine("---------- Ludo ----------");
+            Console.WriteLine("__________Ludo__________");
             Console.WriteLine();
         }
 
@@ -110,11 +113,7 @@ namespace Ludospil
         {
             while(this. state == GameState.Inplay)
             {
-                if (dice.GetValue() == 6)
-                {
-                    playerTurn--;
-                   // Console.WriteLine("der er" + myTurn.GetDescription() +"tur igen" );
-                }
+
                 Player myTurn =  players[(playerTurn-1)];
                 Console.WriteLine(myTurn.GetName + "'s tur");
                 Console.WriteLine("det er " + myTurn.GetDescription() + " tur");
@@ -187,12 +186,11 @@ namespace Ludospil
             {
                 playerTurn = 1;
             }
-            
-            else 
+            else if(dice.GetValue() == 6 ) { }
+            else
             {
                 playerTurn++;
             }
-
             Console.Write("det er nu ");
 			
 
