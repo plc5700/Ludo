@@ -22,6 +22,7 @@ namespace Ludospil
             this.color = clr;
             this.state = TokenState.Home;
             this.tokenStartLocation = tsl;
+            this.tokenLocation = this.tokenStartLocation;
 
         }
         public int GetTokenId()
@@ -36,7 +37,7 @@ namespace Ludospil
         {
             return this.state;
         }
-        public int GetLocation
+        public int TokenLocation
         {
             get { return this.tokenLocation; }
             set { this.tokenLocation = value; }

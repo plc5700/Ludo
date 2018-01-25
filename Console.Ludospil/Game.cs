@@ -136,6 +136,7 @@ namespace Ludospil
 
         public void ShowTurnOptions(Token[] tokens)
 		{
+            int homes = 0;
 			int choice = 0;
 
             Console.WriteLine("Her er dine brikker:");
@@ -151,6 +152,8 @@ namespace Ludospil
                             choice++;
                         } else {
                             Console.Write(" <- Kan IKKE spilles");
+                            homes++;
+                            this.ChangeTurn(homes);
                         }
                         break;
                     case TokenState.InPlay:
@@ -170,7 +173,7 @@ namespace Ludospil
             // No options, change turn
             if(choice == 0)
             {
-                this.ChangeTurn();
+                this.ChangeTurn(0);
             }
             else 
             {
@@ -179,14 +182,23 @@ namespace Ludospil
             }
 		}
 		
-        private void ChangeTurn()
+        private void ChangeTurn(int h)
 		{
+            int t;
             Console.WriteLine("");
             if (playerTurn == numberOfPlayers)
             {
                 playerTurn = 1;
             }
-            else if(dice.GetValue() == 6 ) { }
+            else if (h = 4)
+            {
+                t = t + 1;
+                if (t == 3)
+                {
+                    playerTurn++;
+                }
+            }
+            else if(dice.GetValue() == 6){}
             else
             {
                 playerTurn++;

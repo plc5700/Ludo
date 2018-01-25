@@ -43,6 +43,9 @@ namespace Ludospil
         {
             return this.tokens;
         }
-
+        public Token[] GetToken()
+        {
+            return this.token;
+        }
     }
 }
