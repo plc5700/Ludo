@@ -17,6 +17,8 @@ namespace Ludospil
         private Player[] players;
         private int playerTurn = 1;
         private Dice dice = new Dice();
+        private int ct = 0;
+        int choice = 0;
 
         public Game()
         {
@@ -136,8 +138,8 @@ namespace Ludospil
 
         public void ShowTurnOptions(Token[] tokens)
 		{
-            int homes = 0;
-			int choice = 0;
+			//int choice = 0;
+            choice = 0;
 
             Console.WriteLine("Her er dine brikker:");
 			foreach (Token tk in tokens)
@@ -147,13 +149,12 @@ namespace Ludospil
 
                 switch(tk.GetState()){
                     case TokenState.Home:
-                        if(dice.GetValue() == 6){
+                        if(dice.GetValue() == 6)
+                        {
                             Console.Write(" <- Kan spilles");
                             choice++;
                         } else {
                             Console.Write(" <- Kan IKKE spilles");
-                            homes++;
-                            this.ChangeTurn(homes);
                         }
                         break;
                     case TokenState.InPlay:
@@ -165,6 +166,7 @@ namespace Ludospil
                         choice++;
 						break;
                 }
+
                 Console.WriteLine("");
 			}
             Console.WriteLine("");
@@ -173,7 +175,7 @@ namespace Ludospil
             // No options, change turn
             if(choice == 0)
             {
-                this.ChangeTurn(0);
+                this.ChangeTurn();
             }
             else 
             {
@@ -182,33 +184,45 @@ namespace Ludospil
             }
 		}
 		
-        private void ChangeTurn(int h)
+        private void ChangeTurn()
 		{
-            int t;
+            
             Console.WriteLine("");
+            if(dice.GetValue() == 6)
+			{
+                Console.Write("det er nu ");
+                pause(1000);
+                TakeTurns();
+            }
+            //choice == 0 && ct > 3)
+            else if(players[playerTurn - 1].GetStat(0)==TokenState.Home && players[playerTurn - 1].GetStat(1)==TokenState.Home && players[playerTurn - 1].GetStat(2)==TokenState.Home && players[playerTurn - 1].GetStat(3)==TokenState.Home && ct < 2 )
+            {
+                ct++;
+                Console.Write("det er nu ");
+                pause(1000);
+                TakeTurns();
+            }
+            else
+            {
+                ct = 0;
+                NextPlayer();
+            }
+	    }
+        private void NextPlayer()
+        {
+             Console.WriteLine("");
             if (playerTurn == numberOfPlayers)
             {
                 playerTurn = 1;
             }
-            else if (h = 4)
-            {
-                t = t + 1;
-                if (t == 3)
-                {
-                    playerTurn++;
-                }
-            }
-            else if(dice.GetValue() == 6){}
             else
             {
                 playerTurn++;
             }
             Console.Write("det er nu ");
-			
-
             pause(1000);
             TakeTurns();
-	    }
+        }
     }
 
 }

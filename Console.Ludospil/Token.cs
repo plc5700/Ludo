@@ -37,6 +37,7 @@ namespace Ludospil
         {
             return this.state;
         }
+        
         public int TokenLocation
         {
             get { return this.tokenLocation; }

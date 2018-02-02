@@ -1,0 +1,6 @@
+C:\Users\SDE-04026\Source\Repos\Ludo\Console.Ludospil\bin\Release\Console.Ludospil.exe.config
+C:\Users\SDE-04026\Source\Repos\Ludo\Console.Ludospil\bin\Release\Console.Ludospil.exe
+C:\Users\SDE-04026\Source\Repos\Ludo\Console.Ludospil\bin\Release\Console.Ludospil.pdb
+C:\Users\SDE-04026\Source\Repos\Ludo\Console.Ludospil\obj\Release\Ludospil.csproj.CoreCompileInputs.cache
+C:\Users\SDE-04026\Source\Repos\Ludo\Console.Ludospil\obj\Release\Console.Ludospil.exe
+C:\Users\SDE-04026\Source\Repos\Ludo\Console.Ludospil\obj\Release\Console.Ludospil.pdb

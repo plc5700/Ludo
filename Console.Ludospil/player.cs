@@ -12,6 +12,7 @@ namespace Ludospil
         private readonly int playerId;
         private readonly string name;
         private readonly Token[] tokens;
+        private readonly Token[] token;
 
         public Player(int id, string playerName, Token[] tokens)
         {
@@ -46,6 +47,11 @@ namespace Ludospil
         public Token[] GetToken()
         {
             return this.token;
+
+        }
+        public TokenState GetStat(int id)
+        {
+            return this.tokens[id].GetState();
         }
     }
 }
