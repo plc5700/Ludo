@@ -212,7 +212,7 @@ namespace Ludospil
             if(dice.GetValue() == 6)
 			{
                 Console.Write("det er nu ");
-                pause(1000);
+                Pause(1000);
                 TakeTurns();
             }
             //choice == 0 && ct > 3)
@@ -220,7 +220,7 @@ namespace Ludospil
             {
                 ct++;
                 Console.Write("det er nu ");
-                pause(1000);
+                Pause(1000);
                 TakeTurns();
             }
             else
@@ -241,7 +241,7 @@ namespace Ludospil
                 playerTurn++;
             }
             Console.Write("det er nu ");
-            pause(1000);
+            Pause(1000);
             TakeTurns();
         }
     }
