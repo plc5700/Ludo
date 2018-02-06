@@ -53,5 +53,14 @@ namespace Ludospil
         {
             return this.tokens[id].GetState();
         }
+        public int TokenLocation(int id)
+        {
+            return this.token[id].TokenLocation;
+            
+        }
+        public void Movetoken(int ds, int id)
+        {
+            this.token[id].TokenLocation =+ ds;
+        } 
     }
 }

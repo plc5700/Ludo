@@ -14,6 +14,7 @@ namespace Ludospil
     {
         private GameState state;
         private int numberOfPlayers;
+        private int chooseToken;
         private Player[] players;
         private int playerTurn = 1;
         private Dice dice = new Dice();
@@ -40,7 +41,7 @@ namespace Ludospil
             Console.WriteLine();
         }
 
-        private void pause(int dl)
+        private void Pause(int dl)
         {
             System.Threading.Thread.Sleep(dl);
         }
@@ -177,12 +178,32 @@ namespace Ludospil
             {
                 this.ChangeTurn();
             }
-            else 
+            else
             {
-                Console.WriteLine("Vælg den #brik du vil spille?");
-
+                this.MoveToken();
             }
-		}
+        }
+
+        private void MoveToken()
+        {
+            Console.WriteLine("Vælg den #brik du vil spille?");
+            while (chooseToken < 1 || chooseToken > 4)
+            {
+                //Console.ReadKey();
+                if (!int.TryParse(Console.ReadKey().KeyChar.ToString(), out this.chooseToken))
+                {
+                    Console.WriteLine();
+                    Console.WriteLine("Ugyldig værdi, vælg et tal mellem 1 og 4");
+                }
+            }
+
+
+            //players[playerTurn].TokenLocation
+            players[playerTurn - 1].Movetoken(dice.GetValue(), chooseToken);
+            ChangeTurn();
+
+        }
+    
 		
         private void ChangeTurn()
 		{
