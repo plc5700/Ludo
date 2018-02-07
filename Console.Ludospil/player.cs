@@ -12,7 +12,7 @@ namespace Ludospil
         private readonly int playerId;
         private readonly string name;
         private readonly Token[] tokens;
-        private readonly Token[] token;
+        //private readonly Token[] token;
 
         public Player(int id, string playerName, Token[] tokens)
         {
@@ -46,7 +46,7 @@ namespace Ludospil
         }
         public Token[] GetToken()
         {
-            return this.token;
+            return this.tokens;
 
         }
         public TokenState GetStat(int id)
@@ -55,12 +55,15 @@ namespace Ludospil
         }
         public int TokenLocation(int id)
         {
-            return this.token[id].TokenLocation;
+            return this.tokens[id].TokenLocation;
             
         }
         public void Movetoken(int ds, int id)
         {
-            this.token[id].TokenLocation =+ ds;
-        } 
+            for (int i = 0; i < ds; i++)
+            {
+                this.tokens[id].TokenLocation += 1;
+            }
+        }   
     }
 }

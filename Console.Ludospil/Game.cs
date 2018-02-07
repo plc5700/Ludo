@@ -199,7 +199,7 @@ namespace Ludospil
 
 
             //players[playerTurn].TokenLocation
-            players[playerTurn - 1].Movetoken(dice.GetValue(), chooseToken);
+            players[playerTurn - 1].Movetoken(dice.GetValue(), chooseToken - 1);
             ChangeTurn();
 
         }
@@ -231,7 +231,10 @@ namespace Ludospil
 	    }
         private void NextPlayer()
         {
-             Console.WriteLine("");
+            Console.WriteLine("tyrke en tast for næste spille");
+            Console.ReadKey();
+            Clear();
+            Console.WriteLine("");
             if (playerTurn == numberOfPlayers)
             {
                 playerTurn = 1;
