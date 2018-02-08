@@ -12,6 +12,7 @@ namespace Ludospil
         private readonly int playerId;
         private readonly string name;
         private readonly Token[] tokens;
+        
         //private readonly Token[] token;
 
         public Player(int id, string playerName, Token[] tokens)

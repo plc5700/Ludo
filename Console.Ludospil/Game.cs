@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Ludospil
 {
-    public enum GameColor { Yellow, Green, Blu, Red };
+    public enum GameColor {Yellow, Green, Blu, Red, white};
     public enum GameState {Inplay, Finished};
 
     public class Game
@@ -16,6 +16,7 @@ namespace Ludospil
         private int numberOfPlayers;
         private int chooseToken;
         private Player[] players;
+        private Field[] field;
         private int playerTurn = 1;
         private Dice dice = new Dice();
         private int ct = 0;
@@ -26,6 +27,7 @@ namespace Ludospil
             Console.WriteLine("hej og Velkommen til mit Ludo spil");
             SetNumberOfPlayers();
             CreatePlayers();
+            CreateField();
             ShowPlayers();
             state = GameState.Inplay;
             Console.WriteLine("klar til at spille (tryk vilkensomhelst knap)");
@@ -74,6 +76,60 @@ namespace Ludospil
                 players[i] = new Player((i+1), name, tkns);
 
                 
+                
+            }
+        }
+        public void CreateField()
+        {
+            this.field = new Field[77];
+            for (int i = 0; i <= 76; i++)
+            {
+                switch (i)
+                {
+                    case 0:
+                        field[i] = new Field(i, GameColor.white, FieldType.Home);
+                        break;
+                    //case 1:
+                    //    field[i] = new Field(i, GameColor.Red, FieldType.Safe);
+                    //    break;
+                    //case 14:
+                    //    field[i] = new Field(i, GameColor.Blu, FieldType.Safe);
+                    //    break;
+                    //case 27:
+                    //    field[i] = new Field(i, GameColor.Yellow, FieldType.Safe);
+                    //    break;
+                    //case 40:
+                    //    field[i] = new Field(i, GameColor.Green, FieldType.Safe);
+                    //    break;
+                    case 1: case 53: case 54: case 55: case 56: case 57:
+                        field[i] = new Field(i, GameColor.Red, FieldType.Safe);
+                        break;
+                    case 14: case 59: case 60: case 61: case 62: case 63:
+                        field[i] = new Field(i, GameColor.Blu, FieldType.Safe);
+                        break;
+                    case 27: case 65: case 66: case 67: case 68: case 69:
+                        field[i] = new Field(i, GameColor.Yellow, FieldType.Safe);
+                        break;
+                    case 40: case 71: case 72: case 73: case 74: case 75:
+                        field[i] = new Field(i, GameColor.Green, FieldType.Safe);
+                        break;
+                    case 58:
+                        field[i] = new Field(i, GameColor.Red, FieldType.Finish);
+                        break;
+                    case 64:
+                        field[i] = new Field(i, GameColor.Blu, FieldType.Finish);
+                        break;
+                    case 70:
+                        field[i] = new Field(i, GameColor.Yellow, FieldType.Finish);
+                        break;
+                    case 76:
+                        field[i] = new Field(i, GameColor.Green, FieldType.Finish);
+                        break;
+                    default:
+                        field[i] = new Field(i, GameColor.white, FieldType.InPlay);
+                        break;
+
+                }
                 
             }
         }

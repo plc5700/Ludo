@@ -14,13 +14,16 @@ namespace Ludospil
     {
         private GameColor color;
         private int fieldId;
-        private Token[] tokens = new Token[2];
+        //private Token[] tokens = new Token[2];
+        private FieldType fieldType;
         
-        public Field(int id,GameColor color)
+        public Field(int id, GameColor color, FieldType type)
         {
             this.fieldId = id;
+            this.fieldType = type;
             this.color = color;
         }
+        
 
         //     public bool PlaceToken(Token tkn)
         //     {
