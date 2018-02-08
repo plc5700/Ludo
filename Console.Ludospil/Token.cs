@@ -33,10 +33,15 @@ namespace Ludospil
         {
             return this.color;
         }
-        public TokenState GetState()
+        public TokenState GetState
         {
-            return this.state;
+            get { return this.state; } 
+            set { this.state = value; }
         }
+        //public TokenState SetState()
+        //{
+        //    this.state = value;
+        //}
         
         public int TokenLocation
         {

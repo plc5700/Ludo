@@ -23,7 +23,12 @@ namespace Ludospil
             this.fieldType = type;
             this.color = color;
         }
-        
+        public FieldType GetFieldType()
+        {
+            return this.fieldType;
+        }
+
+
 
         //     public bool PlaceToken(Token tkn)
         //     {
