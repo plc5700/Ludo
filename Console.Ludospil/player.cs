@@ -13,6 +13,7 @@ namespace Ludospil
         private readonly string name;
         private readonly Token[] tokens;
         private Field[] field;
+        private Player[] players; 
 
         //private readonly Token[] token;
 
@@ -103,6 +104,22 @@ namespace Ludospil
             //else if (tokens[id].GetColor() == field[tokens[id].TokenLocation].GetColor())
             //    tokens[id].State = TokenState.Safe;
             //else tokens[id].State = TokenState.InPlay;
-        }   
+        }
+        public void TjekFortoken(int id, int ply, int fld)
+        {
+            foreach (Player pl in this.players)
+            {
+                foreach(Token tk in this.tokens)
+                {
+                    if (pl.TokenLocation(tk.) == fld)
+                    {
+
+                    }
+
+                }
+            }
+
+
+        }
     }
 }
