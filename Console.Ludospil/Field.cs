@@ -27,6 +27,10 @@ namespace Ludospil
         {
             return this.fieldType;
         }
+        public GameColor GetColor()
+        {
+            return this.color;
+        }
 
 
 

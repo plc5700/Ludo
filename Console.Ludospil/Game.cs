@@ -141,7 +141,7 @@ namespace Ludospil
                 switch(colorIndex)
                 {
                     case 0:
-                        tokens[i] =new Token((i+1), GameColor.Red, 0);
+                        tokens[i] =new Token((i+1), GameColor.Red, 57);
                         break;
                     case 1:
                         tokens[i] =new Token((i+1), GameColor.Blu, 0);
@@ -170,8 +170,8 @@ namespace Ludospil
         }
         private void TakeTurns()
         {
-            while(this. state == GameState.Inplay)
-            {
+            //while(this.state == GameState.Inplay)
+            //{
 
                 Player myTurn =  players[(playerTurn-1)];
                 Console.WriteLine(myTurn.GetName + "'s tur");
@@ -184,8 +184,8 @@ namespace Ludospil
                 Console.WriteLine("Du slog " + dice.ThrowDice().ToString());
                 Console.WriteLine("");
                 ShowTurnOptions(myTurn.GetTokens());
-                break;
-            }
+                //break;
+            //}
         }
 
             
@@ -202,10 +202,11 @@ namespace Ludospil
 			foreach (Token tk in tokens)
 			{
 
-                Console.Write("Brik #" + tk.GetTokenId() + ": er placeret: " + tk.GetState());
+                Console.Write("Brik #" + tk.GetTokenId() + ": er placeret: " + field[tk.TokenLocation].GetFieldType());
 
-                switch(tk.GetState()){
-                    case TokenState.Home:
+                switch(field[tk.TokenLocation].GetFieldType())
+                {
+                    case FieldType.Home:
                         if(dice.GetValue() == 6)
                         {
                             Console.Write(" <- Kan spilles");
@@ -214,14 +215,17 @@ namespace Ludospil
                             Console.Write(" <- Kan IKKE spilles");
                         }
                         break;
-                    case TokenState.InPlay:
+                    case FieldType.InPlay:
                         Console.Write(" <- Kan spilles");
                         choice++;
 						break;
-                    case TokenState.Safe:
+                    case FieldType.Safe:
                         Console.Write(" <- Kan spilles");
                         choice++;
 						break;
+                    case FieldType.Finish:
+                        Console.Write("er i mål");
+                        break;
                 }
 
                 Console.WriteLine("");
@@ -256,6 +260,7 @@ namespace Ludospil
 
             //players[playerTurn].TokenLocation
             players[playerTurn - 1].Movetoken(dice.GetValue(), chooseToken - 1);
+            chooseToken = 0;
             ChangeTurn();
 
         }
@@ -272,7 +277,7 @@ namespace Ludospil
                 TakeTurns();
             }
             //choice == 0 && ct > 3)
-            else if(players[playerTurn - 1].GetStat(0)==TokenState.Home && players[playerTurn - 1].GetStat(1)==TokenState.Home && players[playerTurn - 1].GetStat(2)==TokenState.Home && players[playerTurn - 1].GetStat(3)==TokenState.Home && ct < 2 )
+            else if(field[players[playerTurn - 1].TokenLocation(0)].GetFieldType() == FieldType.Home && field[players[playerTurn - 1].TokenLocation(1)].GetFieldType() == FieldType.Home && field[players[playerTurn - 1].TokenLocation(2)].GetFieldType() == FieldType.Home && field[players[playerTurn - 1].TokenLocation(3)].GetFieldType() == FieldType.Home && ct < 2 )
             {
                 ct++;
                 Console.Write("det er nu ");

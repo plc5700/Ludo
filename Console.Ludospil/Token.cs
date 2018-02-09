@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Ludospil
 {
-    public enum TokenState { Home, InPlay, Safe };
+    public enum TokenState { Home, InPlay, Safe, Finish };
     public class Token
     {
         private int tokenId;
@@ -33,7 +33,7 @@ namespace Ludospil
         {
             return this.color;
         }
-        public TokenState GetState
+        public TokenState State
         {
             get { return this.state; } 
             set { this.state = value; }
