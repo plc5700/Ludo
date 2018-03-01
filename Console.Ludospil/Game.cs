@@ -141,7 +141,7 @@ namespace Ludospil
                 switch(colorIndex)
                 {
                     case 0:
-                        tokens[i] =new Token((i+1), GameColor.Red, 57);
+                        tokens[i] =new Token((i+1), GameColor.Red, 0);
                         break;
                     case 1:
                         tokens[i] =new Token((i+1), GameColor.Blu, 0);
@@ -259,14 +259,17 @@ namespace Ludospil
 
 
             //players[playerTurn].TokenLocation
-            players[playerTurn - 1].Movetoken(dice.GetValue(), chooseToken - 1);
+            //TjekFortoken;
+            players[playerTurn - 1].Movetoken(dice.GetValue(), chooseToken - 1, playerTurn - 1, players[playerTurn-1].TokenLocation(chooseToken-1) );
             chooseToken = 0;
             ChangeTurn();
 
         }
-    
-		
-        private void ChangeTurn()
+        public void TjekFortoken(int id, int ply, int fld, int mv)
+        {
+          
+        }
+                private void ChangeTurn()
 		{
             
             Console.WriteLine("");

@@ -59,7 +59,7 @@ namespace Ludospil
         {
             return this.tokens[id].TokenLocation;
         }
-        public void Movetoken(int ds, int id/*, GameColor clr*/)
+        public void Movetoken(int ds, int id, int ply, int tl/*, GameColor clr*/)
         {
             for (int i = 0; i < ds; i++)
             {
@@ -74,27 +74,27 @@ namespace Ludospil
                         switch (Color)
                         {
                             case GameColor.Red:
-                                this.tokens[id].TokenLocation = 1;
+                                tl = 1;
                                 break;
                             case GameColor.Blu:
-                                this.tokens[id].TokenLocation = 14;
+                                tl = 14;
                                 break;
                             case GameColor.Yellow:
-                                this.tokens[id].TokenLocation = 27;
+                                tl = 27;
                                 break;
                             case GameColor.Green:
-                                this.tokens[id].TokenLocation = 40;
+                                tl = 40;
                                 break;
                         }
                     }
-                    if (tokens[id].TokenLocation==12 && Color == GameColor.Blu)
-                         this.tokens[id].TokenLocation = 59; 
-                    else if (tokens[id].TokenLocation == 25 && Color == GameColor.Yellow)
-                         this.tokens[id].TokenLocation = 65; 
-                    else if (tokens[id].TokenLocation == 38 && Color == GameColor.Green)
-                         this.tokens[id].TokenLocation = 71;
-                    else if (tokens[id].TokenLocation == 51 && Color == GameColor.Red)
-                         this.tokens[id].TokenLocation = 53; 
+                    if (tl == 12 && Color == GameColor.Blu)
+                         tl = 59; 
+                    else if (tl == 25 && Color == GameColor.Yellow)
+                         tl = 65; 
+                    else if (tl == 38 && Color == GameColor.Green)
+                         tl = 71;
+                    else if (tl == 51 && Color == GameColor.Red)
+                         tl = 53; 
                     else this.tokens[id].TokenLocation += 1;
             }
             //if(tokens[id].TokenLocation == 0)
@@ -104,22 +104,41 @@ namespace Ludospil
             //else if (tokens[id].GetColor() == field[tokens[id].TokenLocation].GetColor())
             //    tokens[id].State = TokenState.Safe;
             //else tokens[id].State = TokenState.InPlay;
-        }
-        public void TjekFortoken(int id, int ply, int fld)
-        {
+            int t1 = 4;
+            int t2 = 4;
             foreach (Player pl in this.players)
             {
-                foreach(Token tk in this.tokens)
+                for (int t = 0; t < 4; t++)
                 {
-                    if (pl.TokenLocation(tk.) == fld)
+                    if (pl.TokenLocation(t) == tokens[id].TokenLocation)
+                    {
+                        if (t1 == 4) { t1 = t; }
+                        else { t2 = t; }
+                        //if(pl.Color == players[ply].Color)
+                        //{
+
+                        //} 
+
+                    }
+                    if ((t1 < 4 && t2 < 4) && (pl.Color != players[ply].Color))//hvis 2 mod
+                    {
+                        tokens[id].TokenLocation = 0;
+                    }
+                    else if ((t1 < 4 && t2 < 4) && (pl.Color == players[ply].Color))//hvis 2 dine
                     {
 
                     }
+                    else if ((t1 < 4 && t2 == 4) && (pl.Color != players[ply].Color))//hvis 1 mod
+                    {
+                        pl.tokens[t].TokenLocation = 0;
+                    }
+                    else if ((t1 < 4 && t2 == 4) && (pl.Color == players[ply].Color))//hvis 1 dine
+                    {
 
+                    }
                 }
+                
             }
-
-
-        }
+        }   
     }
 }
