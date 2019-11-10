@@ -26,3 +26,9 @@ C:\Users\jona345e\Source\Repos\Ludo\Console.Ludospil\obj\Debug\Ludospil.csprojRe
 C:\Users\jona345e\Source\Repos\Ludo\Console.Ludospil\obj\Debug\Ludospil.csproj.CoreCompileInputs.cache
 C:\Users\jona345e\Source\Repos\Ludo\Console.Ludospil\obj\Debug\Console.Ludospil.exe
 C:\Users\jona345e\Source\Repos\Ludo\Console.Ludospil\obj\Debug\Console.Ludospil.pdb
+C:\Users\Administrator\Documents\GitHub\Ludo\Console.Ludospil\bin\Debug\Console.Ludospil.exe.config
+C:\Users\Administrator\Documents\GitHub\Ludo\Console.Ludospil\obj\Debug\Console.Ludospil.exe
+C:\Users\Administrator\Documents\GitHub\Ludo\Console.Ludospil\obj\Debug\Console.Ludospil.pdb
+C:\Users\Administrator\Documents\GitHub\Ludo\Console.Ludospil\obj\Debug\Ludospil.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Documents\GitHub\Ludo\Console.Ludospil\bin\Debug\Console.Ludospil.exe
+C:\Users\Administrator\Documents\GitHub\Ludo\Console.Ludospil\bin\Debug\Console.Ludospil.pdb

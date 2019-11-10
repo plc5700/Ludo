@@ -31,10 +31,8 @@ namespace Ludospil
                 return this.name;
             }
         }
-        public GameColor Color
-        {
-            get;
-        }
+        public GameColor Color;
+
         public int GetPlayerId()
         {
             return this.playerId;
